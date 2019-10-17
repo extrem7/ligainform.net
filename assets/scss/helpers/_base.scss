@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Play:400,700&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #2D2A2A;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+body.open-menu {
+  position: fixed;
+  overflow: hidden;
+}
+
+body.stick {
+  padding-top: 37px;
+}
+
+main {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  flex: 1 0 auto;
+}
+
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #333333
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #333333
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #FFA360;
+  border: 2px solid #FFA360
+}
+
+
+@media (max-width: 991px) {
+
+  main {
+    padding-bottom: 50px;
+    padding-top: 30px;
+  }
+
+  body {
+    padding-top: 46px;
+  }
+}

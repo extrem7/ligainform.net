@@ -1,0 +1,25 @@
+/*import mixin*/
+@import 'helpers/mixins';
+/*import bootstrap*/
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../node_modules/owl.carousel/dist/assets/owl.carousel.min.css";
+@import "../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css";
+/*import variables*/
+@import 'helpers/variables';
+/*import reset*/
+@import 'helpers/reset';
+/*import base*/
+@import 'helpers/base';
+/*import general*/
+@import 'helpers/general';
+/*import general*/
+@import 'helpers/form';
+/*import layouts*/
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/article';
+@import 'pages/artilce';
+@import 'pages/infopage';
+@import 'pages/home';
+

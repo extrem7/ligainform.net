@@ -1,0 +1,265 @@
+.title {
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.search-title {
+  color: #000000;
+  font-weight: 400;
+  font-size: 20px;}
+
+.page-title {
+  color: #292727;
+  font-size: 25px;
+  font-weight: 500;
+  &.line {
+    &:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background-color: #fb964d;
+      margin: 30px auto;
+    }
+  }
+}
+
+.light-weight {
+  font-weight: 300;
+}
+
+.regular-weight {
+  font-weight: 400;
+}
+
+.title-line-cap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.title-nowrap {
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.banner-site-pc,
+.banner-site-mob {
+  text-align: center;
+}
+.banner-site-mob {
+  display: none;
+}
+
+.banner-single-bottom {
+  margin-top: 50px;
+}
+.banner-archive-top {
+  margin-bottom: 90px;
+}
+.banner-home-top {
+  margin-bottom: 50px;
+}
+.banner-home-bottom {
+  margin-top: 50px;
+}
+.banner-archive-bottom {
+  margin-top: 100px;
+}
+
+.dynamic-content h2,
+.dynamic-content h3,
+.dynamic-content h4,
+.dynamic-content h5 {
+  margin: 20px 0;
+  font-size: 20px;
+  color: #2d2a2a;
+  font-weight: 500;
+  display: block;
+}
+.dynamic-content blockquote{
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #ffa360;
+  p {
+    margin: 0;
+  }
+}
+.dynamic-content p {
+  margin: 0 0 10px;
+}
+.dynamic-content .alignleft {
+  display: block;
+  float: left;
+  margin: 1rem 2rem 1rem 0
+}
+.dynamic-content a:not(.button) {
+  color: $orange;
+  text-decoration: underline;
+}
+.dynamic-content a:not(.button):hover {
+  color: $orange;
+  text-decoration: none
+}
+.dynamic-content img {
+  max-width: 100%;
+  height: auto
+}
+.dynamic-content .alignright {
+  display: block;
+  float: right;
+  margin: 1rem 0 1rem 2rem
+}
+.dynamic-content .aligncenter {
+  display: block;
+  margin: 1rem auto
+}
+.dynamic-content {
+  ul {
+    padding: 20px;
+    li {
+      list-style: disc;
+    }
+  }
+  ul li + li {
+    margin-top: 5px;
+  }
+}
+.dynamic-content iframe {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 90px;
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page-numbers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 51px;
+      height: 45px;
+      font-family: 'Play', sans-serif;
+      font-weight: 400;
+      color: #000000;
+      font-size: 15px;
+      border: 1px solid #e1e1e1;
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      & + .page-numbers {
+        border-left: 0;
+      }
+      &.current,
+      &:hover {
+        color: #fff;
+        border-color: #f99601;
+        background-color: #f99601;
+      }
+    }
+  }
+}
+
+.modal-login {
+  max-width: 500px;
+  .modal-header {
+    padding: 10px;
+    border-bottom: 2px solid #FF9E4A;
+    box-shadow: 0 1px 5px rgba(0,0,0,.5);
+  }
+  .close-btn {
+    background: #787574;
+    color: #fff;
+    opacity: 1;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border: 0;
+    top: 0;
+    right: -2px;
+    &:hover {
+      background-color: $orange;
+    }
+  }
+}
+
+.site-error-text {
+  color: #adb1b7;
+  font-size: 15px;
+}
+
+
+  @media (max-width: 991px) {
+
+    .dynamic-content h2,
+    .dynamic-content h3,
+    .dynamic-content h4,
+    .dynamic-content h5 {
+      font-size: 17px;
+      margin: 10px 0;
+    }
+
+    .dynamic-content .alignleft,
+    .dynamic-content .alignright {
+      display: block;
+      margin: 1rem auto;
+      float: none;
+    }
+
+    .pagination {
+      margin-top: 40px;
+    }
+
+    .banner-archive-top {
+      margin-bottom: 50px;
+    }
+
+    .banner-archive-bottom {
+      margin-top: 50px;
+    }
+
+    .page-title {
+      font-size: 20px;
+      &:after {
+        margin: 15px auto 30px auto;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .search-title {
+      font-size: 17px;
+    }
+
+    .pagination {
+      .nav-links {
+        .page-numbers:not(.next):not(.prev):not(.current) {
+          display: none;
+        }
+      }
+    }
+
+    .banner-site-pc {
+      display: none;
+    }
+
+    .banner-site-mob {
+      display: block;
+    }
+  }
