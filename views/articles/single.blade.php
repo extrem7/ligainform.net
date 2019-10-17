@@ -54,7 +54,7 @@
         <div class="col-xl-3 d-none d-xl-block">
             @include('articles.includes.last-items')
             <div class="banner-site-pc mt-5">
-                {{league()->ads()}}
+                {!!league()->ads() !!}
             </div>
         </div>
     </div>

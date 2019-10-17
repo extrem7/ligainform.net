@@ -87,7 +87,7 @@ class Theme extends ThemeBase
 
     public function ads($size = '300x600'): string
     {
-        return get_option("ads_$size");
+        return get_field("ads_$size", 'option');
     }
 
     public function comments()

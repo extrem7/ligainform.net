@@ -5609,15 +5609,7 @@ body::-webkit-scrollbar-thumb {
 
 .banner-site-pc,
 .banner-site-mob {
-  text-align: center;
-  display: flex;
-  white-space: nowrap;
-  justify-content: center;
-  overflow-x: auto;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-overflow-scrolling: touch;
-  max-width: 100%; }
+  text-align: center; }
 
 .banner-site-mob {
   display: none; }
@@ -5812,6 +5804,18 @@ body::-webkit-scrollbar-thumb {
   .the_champ_login_ul .theChampLogin .theChampInstagramLoginSvg {
     background-size: 100% !important;
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9Ii00Ni4wMDQxIiB5MT0iNjM0LjEyMDgiIHgyPSItMzIuOTMzNCIgeTI9IjY0Ny4xOTE3IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDMyIDAgMCAtMzIgMTUxOSAyMDc1NykiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkMxMDciLz48c3RvcCAgb2Zmc2V0PSIwLjUwNyIgc3R5bGU9InN0b3AtY29sb3I6I0Y0NDMzNiIvPjxzdG9wICBvZmZzZXQ9IjAuOTkiIHN0eWxlPSJzdG9wLWNvbG9yOiM5QzI3QjAiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMV8pOyIgZD0iTTM1MiwwSDE2MEM3MS42NDgsMCwwLDcxLjY0OCwwLDE2MHYxOTJjMCw4OC4zNTIsNzEuNjQ4LDE2MCwxNjAsMTYwaDE5MmM4OC4zNTIsMCwxNjAtNzEuNjQ4LDE2MC0xNjBWMTYwQzUxMiw3MS42NDgsNDQwLjM1MiwwLDM1MiwweiBNNDY0LDM1MmMwLDYxLjc2LTUwLjI0LDExMi0xMTIsMTEySDE2MGMtNjEuNzYsMC0xMTItNTAuMjQtMTEyLTExMlYxNjBDNDgsOTguMjQsOTguMjQsNDgsMTYwLDQ4aDE5MmM2MS43NiwwLDExMiw1MC4yNCwxMTIsMTEyVjM1MnoiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzJfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9Ii00Mi4yOTcxIiB5MT0iNjM3LjgyNzkiIHgyPSItMzYuNjQwNCIgeTI9IjY0My40ODQ2IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDMyIDAgMCAtMzIgMTUxOSAyMDc1NykiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRkMxMDciLz48c3RvcCAgb2Zmc2V0PSIwLjUwNyIgc3R5bGU9InN0b3AtY29sb3I6I0Y0NDMzNiIvPjxzdG9wICBvZmZzZXQ9IjAuOTkiIHN0eWxlPSJzdG9wLWNvbG9yOiM5QzI3QjAiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIHN0eWxlPSJmaWxsOnVybCgjU1ZHSURfMl8pOyIgZD0iTTI1NiwxMjhjLTcwLjY4OCwwLTEyOCw1Ny4zMTItMTI4LDEyOHM1Ny4zMTIsMTI4LDEyOCwxMjhzMTI4LTU3LjMxMiwxMjgtMTI4UzMyNi42ODgsMTI4LDI1NiwxMjh6IE0yNTYsMzM2Yy00NC4wOTYsMC04MC0zNS45MDQtODAtODBjMC00NC4xMjgsMzUuOTA0LTgwLDgwLTgwczgwLDM1Ljg3Miw4MCw4MEMzMzYsMzAwLjA5NiwzMDAuMDk2LDMzNiwyNTYsMzM2eiIvPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfM18iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iLTM1LjU0NTYiIHkxPSI2NDQuNTc5MyIgeDI9Ii0zNC43OTE5IiB5Mj0iNjQ1LjMzMzEiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMzIgMCAwIC0zMiAxNTE5IDIwNzU3KSI+PHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQzEwNyIvPjxzdG9wICBvZmZzZXQ9IjAuNTA3IiBzdHlsZT0ic3RvcC1jb2xvcjojRjQ0MzM2Ii8+PHN0b3AgIG9mZnNldD0iMC45OSIgc3R5bGU9InN0b3AtY29sb3I6IzlDMjdCMCIvPjwvbGluZWFyR3JhZGllbnQ+PGNpcmNsZSBzdHlsZT0iZmlsbDp1cmwoI1NWR0lEXzNfKTsiIGN4PSIzOTMuNiIgY3k9IjExOC40IiByPSIxNy4wNTYiLz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48L3N2Zz4=) !important; }
+
+@media (max-width: 1300px) {
+  .banner-site-pc,
+  .banner-site-mob {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%; } }
 
 @media (max-width: 991px) {
   .dynamic-content h2,
@@ -6968,6 +6972,23 @@ footer {
 
 .comments {
   margin-top: 40px; }
+  .comments .comment-respond {
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: 300; }
+    .comments .comment-respond small {
+      font-size: 12px;
+      font-weight: 300; }
+    .comments .comment-respond a {
+      color: #000; }
+  .comments #cancel-comment-reply-link {
+    color: #ff1d1d; }
+  .comments .form-submit {
+    text-align: right; }
+  .comments .cld-common-wrap {
+    min-width: auto; }
+  .comments .cld-like-dislike-wrap.cld-custom img {
+    vertical-align: middle; }
   .comments .comment {
     margin-top: 30px;
     border-bottom: 1px solid #CCCCCC;
@@ -6978,10 +6999,14 @@ footer {
       border-top: 1px solid #CCCCCC; }
   .comments .commentlist {
     list-style: none;
+    margin-top: 30px;
     padding: 0; }
-    .comments .commentlist .commentlist {
+    .comments .commentlist .children {
       padding-left: 75px; }
-      .comments .commentlist .commentlist .comment-wrapper {
+      .comments .commentlist .children .comment {
+        margin-top: 15px;
+        padding-bottom: 0; }
+      .comments .commentlist .children .comment-wrapper {
         border-bottom: 0; }
   .comments .comment-wrapper {
     width: 100%; }
@@ -7083,8 +7108,10 @@ footer {
   .comments .comment-container .name,
   .comments .comment-container .comment-text {
     font-size: 11px; }
-  .comments .commentlist .commentlist {
+  .comments .commentlist .children {
     padding-left: 50px; }
+  .cld-count-wrap {
+    font-size: 12px; }
   .comments .comment {
     margin-top: 15px; }
   .telegram-link {
@@ -7311,6 +7338,21 @@ footer {
     width: 100%;
     height: 450px;
     transition: transform 0.8s ease-in-out; }
+    .news-carousel .carousel-item:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      top: 0%;
+      left: 0;
+      opacity: 1;
+      z-index: 0;
+      background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+      background-repeat: repeat-x;
+      transition: .4s all ease; }
+    .news-carousel .carousel-item:hover:before {
+      opacity: 1;
+      top: 40%; }
     .news-carousel .carousel-item .caption {
       position: absolute;
       bottom: 0;
@@ -7318,7 +7360,6 @@ footer {
       right: 0;
       display: block;
       padding: 25px 20px;
-      background-color: rgba(0, 0, 0, 0.31);
       margin: auto; }
     .news-carousel .carousel-item .title {
       color: #fff;
@@ -7332,6 +7373,8 @@ footer {
       .news-carousel .carousel-item .article-date img {
         width: 13px;
         height: 13px; }
+    .news-carousel .carousel-item .object-fit-image:hover {
+      transform: none; }
   .news-carousel .nav-slider {
     width: 350px;
     flex-shrink: 0; }

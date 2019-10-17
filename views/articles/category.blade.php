@@ -15,10 +15,10 @@
         <div class="col-xl-9 ">
             <div class="banner-archive-top">
                 <div class="banner-site-pc">
-                    {{league()->ads('728x90')}}
+                    {!!league()->ads('728x90')!!}
                 </div>
                 <div class="banner-site-mob">
-                    {{league()->ads('300x250')}}
+                    {!!league()->ads('300x250')!!}
                 </div>
             </div>
             @if (have_posts())
@@ -34,7 +34,7 @@
         </div>
         <div class="col-xl-3 d-none d-xl-block">
             <div class="banner-site-pc">
-                {{ league()->ads() }}
+                {!!league()->ads()!!}
             </div>
         </div>
     </div>

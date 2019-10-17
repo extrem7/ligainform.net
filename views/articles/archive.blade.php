@@ -23,7 +23,7 @@
         </div>
         <div class="col-xl-3 d-none d-xl-block">
             <div class="banner-site-pc">
-                {{league()->ads()}}
+                {!!league()->ads()!!}
             </div>
         </div>
     </div>

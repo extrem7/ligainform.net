@@ -40,10 +40,10 @@ global $post;
     @endisset
     <div class="banner-home-top">
         <div class="banner-site-pc">
-            {{league()->ads('728x90')}}
+            {!!league()->ads('728x90')!!}
         </div>
         <div class="banner-site-mob">
-            {{league()->ads('300x250')}}
+            {!!league()->ads('300x250')!!}
         </div>
     </div>
 
@@ -70,7 +70,7 @@ global $post;
         </div>
         <div class="col-xl-3 col-lg-4">
             <div class="banner-site-pc">
-                {{league()->ads()}}
+                {!!league()->ads()!!}
             </div>
             @php dynamic_sidebar('home-right-sidebar') @endphp
         </div>
