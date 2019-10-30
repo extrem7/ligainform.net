@@ -189,7 +189,14 @@ class ThemeBase
         add_action('login_enqueue_scripts', function () {
             wp_enqueue_style('auth', path() . 'assets/css/admin.css', false);
         }, 10);
-
+        add_action('check_admin_referer', function ($action, $result) {
+            if ($action == "log-out" && !isset($_GET['_wpnonce'])) {
+                $redirect_to = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : '/';
+                $location = str_replace('&amp;', '&', wp_logout_url($redirect_to));
+                header("Location: $location");
+                die;
+            }
+        }, 10, 2);
         add_filter('login_message', function ($message) {
             if (empty($message)) {
                 echo "<div class='politics'>

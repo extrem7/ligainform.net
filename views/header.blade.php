@@ -18,8 +18,8 @@
             <a href="{{get_bloginfo('url')}}" class="home-link {{is_front_page() ? 'active' : '' }}">
                 @icon(home)
                 Главная</a>
-            <a href="{{get_bloginfo('url')}}">
-                <img src="@option(logo_mobile)" alt="logo-mob" class="logo-mob">
+            <a href="{{get_bloginfo('url')}}" class="logo-mob">
+                <img src="@option(logo_mobile)" alt="logo-mob">
             </a>
             <nav class="menu-container">
                 {!!  wp_nav_menu([

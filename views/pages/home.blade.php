@@ -58,7 +58,7 @@ global $post;
                 ])
                 @endforeach
                 <div class="row">
-                    @foreach ($rows as $category)
+                    @foreach ($columns as $category)
                         @include('home.category',[
                         'category' => $category,
                         'wrapper_class' => 'col-12 col-xl-6',

@@ -39,7 +39,7 @@
                 <div class="comments-title title">Комментарии:</div>
                 {{ league()->comments()->form() }}
                 @else
-                    <a href="#" class="btn-comment" data-target="#" data-toggle="modal">КОММЕНТИРОВАТЬ</a>
+                    <a href="#" class="btn-comment" data-target="#loginModal" data-toggle="modal">КОММЕНТИРОВАТЬ</a>
                 @endif
                 @empty($comments)
                     <p class="nocomments">Пока комментариев нет</p>

@@ -1,6 +1,8 @@
 <?php
 require_once get_template_directory() . "/vendor/autoload.php";
 
+require_once get_template_directory() . "/app/controllers/Controller.php";
+
 use Jenssegers\Blade\Blade;
 
 class ThemeRouter
@@ -79,7 +81,7 @@ class ThemeRouter
         $data = [];
 
         if (is_front_page()) {
-            $data = $this->home();
+            $data = Controller::home();
         }
         if (is_archive()) {
             if (is_category()) {
@@ -87,18 +89,18 @@ class ThemeRouter
                 $data = compact('slug');
                 $view = 'articles/category';
             } else {
-                $data = $this->archive();
+                $data = Controller::archive();
                 $view = 'articles/archive';
             }
         }
         if (is_search()) {
-            $data = $this->archive();
+            $data = Controller::archive();
             $view = 'articles/archive';
         }
         if (is_single()) {
             switch (get_post_type()) {
                 case 'post':
-                    $data = $this->single($post);
+                    $data = Controller::single($post);
                     $view = 'articles/single';
                     break;
                 case 'member':
@@ -120,36 +122,6 @@ class ThemeRouter
 
         $this->render($view, $data);
         return null;
-    }
-
-    private function home(): array
-    {
-        $news = get_posts([
-            'posts_per_page' => 4,
-            'meta_key' => 'top_post_on_home',
-            'meta_value' => true
-        ]);
-        $rows = get_categories([
-            'exclude' => [1, 29, 70]
-        ]);
-        $columns = get_categories([
-            'include' => [29, 70]
-        ]);
-        return compact('news', 'rows', 'columns');
-    }
-
-    private function archive(): array
-    {
-        $title = is_search() ? ('Результаты поиска «' . $_GET['s'] . '»') : single_tag_title(null, false);
-        return compact('title');
-    }
-
-    private function single(WP_Post $post): array
-    {
-        $comments = get_comments([
-            'post_id' => $post->ID,
-        ]);
-        return compact('comments');
     }
 
 }

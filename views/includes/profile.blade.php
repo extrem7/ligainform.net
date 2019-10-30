@@ -1,5 +1,5 @@
 @logged
-<a href="{{wp_logout_url()}}" class="login-out panel-item">
+<a href="{{wp_logout_url(get_bloginfo('url'))}}" class="login-out panel-item">
     @icon(logout)
 </a>
 @else
