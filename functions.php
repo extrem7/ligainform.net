@@ -1,4 +1,5 @@
 <?
+
 require_once "app/Theme.php";
 
 function league()

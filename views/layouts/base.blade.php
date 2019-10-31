@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo get_the_title(); ?></title>
+    <title>{{wp_get_document_title_fixed()}}</title>
     @yield('header')
     {{wp_head()}}
 </head>
