@@ -1,14 +1,10 @@
 <?php
 require_once get_template_directory() . "/vendor/autoload.php";
-
 require_once get_template_directory() . "/app/controllers/Controller.php";
-
 use Jenssegers\Blade\Blade;
-
 class ThemeRouter
 {
     private $blade;
-
     public function __construct()
     {
         $this->blade = new Blade(get_template_directory() . '/views', get_template_directory() . '/cache');
@@ -16,13 +12,11 @@ class ThemeRouter
         add_filter('theme_page_templates', [$this, 'pageTemplates']);
         add_filter('template_include', [$this, 'routes']);
     }
-
     public function render(string $view, array $args = [])
     {
         $blade = new Blade(__dir__ . '/src/views', __dir__ . '/cache');
         echo $this->blade->make($view, $args);
     }
-
     private function directives(): void
     {
         $this->blade->directive('title', function () {
@@ -40,7 +34,6 @@ class ThemeRouter
         $this->blade->directive('reset_query', function () {
             return "<?php wp_reset_query(); ?>";
         });
-
         $this->blade->directive('option', function ($field) {
             return "<?php the_option('$field'); ?>";
         });
@@ -50,7 +43,6 @@ class ThemeRouter
         $this->blade->directive('rowend', function ($option) {
             return "<?php endwhile; ?>";
         });
-
         $this->blade->directive('icon', function ($icon) {
             return the_icon($icon, false);
         });
@@ -58,11 +50,9 @@ class ThemeRouter
             return "<?php if(is_user_logged_in()): ?>";
         });
     }
-
     public function pageTemplates($post_templates): array
     {
         $pages = array_diff(scandir(get_template_directory() . '/views/pages/'), ['.', '..']);
-
         foreach ($pages as $page) {
             $template_contents = file_get_contents(get_template_directory() . '/views/pages/' . $page);
             preg_match_all("/Template Name:(.*)\n/siU", $template_contents, $template_name);
@@ -72,14 +62,11 @@ class ThemeRouter
         }
         return $post_templates;
     }
-
     public function routes($template)
     {
         global $post;
-
         $view = '';
         $data = [];
-
         if (is_front_page()) {
             $data = Controller::home();
         }
@@ -119,9 +106,7 @@ class ThemeRouter
             $view = str_replace('.php', '', $view);
             $view = str_replace('.blade', '', $view);
         }
-
         $this->render($view, $data);
         return null;
     }
-
 }
