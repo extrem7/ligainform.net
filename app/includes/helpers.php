@@ -9,12 +9,18 @@ function pre($array)
     echo "</pre>";
 }
 
+function dd($array)
+{
+    pre($array);
+    exit;
+}
+
 function path()
 {
     return get_template_directory_uri() . '/';
 }
 
-function tel($phone)
+function tel(string $phone)
 {
     return 'tel:' . preg_replace('/[^0-9]/', '', $phone);
 }
@@ -36,7 +42,7 @@ function the_image($name, $class = '', $post = null, $size = 'full')
     echo wp_get_attachment_image($image, $size, false, ['class' => $class]);
 }
 
-function the_icon($name, $echo = true)
+function the_icon(string $name, bool $echo = true)
 {
     $icon = file_get_contents(path() . "assets/img/icons/$name.svg");
     if ($echo) {
@@ -104,7 +110,7 @@ function the_link($field, $post = null, $classes = "")
     }
 }
 
-function repeater_image($name)
+function repeater_image(string $name)
 {
     echo 'src="' . get_sub_field($name)['url'] . '" ';
     echo 'alt="' . get_sub_field($name)['alt'] . '" ';
@@ -116,9 +122,10 @@ function front_id()
 }
 
 /**
+ * @param WP_Post|null $post
  * @return WP_Term[]
  */
-function post_categories($post = null): array
+function post_categories(WP_Post $post = null): array
 {
     if ($post == null) {
         global $post;
@@ -128,12 +135,12 @@ function post_categories($post = null): array
     ]);
 }
 
-function the_option($name, $page = 'option')
+function the_option(string $name, string $page = 'option')
 {
     echo get_field($name, $page);
 }
 
-function view($view, $args = null, $folder = 'views')
+function view(string $view, array $args = null, string $folder = 'views')
 {
     if (!empty($args) && is_array($args)) {
         extract($args); // @codingStandardsIgnoreLine
@@ -141,7 +148,7 @@ function view($view, $args = null, $folder = 'views')
     include get_template_directory() . "/$folder/$view.php";
 }
 
-function time_diff($post = null): string
+function time_diff(WP_Post $post = null): string
 {
     if ($post == null) {
         global $post;
@@ -174,7 +181,8 @@ function asset(string $path)
     return path() . 'assets/' . $path;
 }
 
-function wp_get_document_title_fixed() {
+function wp_get_document_title_fixed()
+{
 
     /**
      * Filters the document title before it is generated.
@@ -182,12 +190,12 @@ function wp_get_document_title_fixed() {
      * Passing a non-empty value will short-circuit wp_get_document_title(),
      * returning that value instead.
      *
+     * @param string $title The document title. Default empty string.
      * @since 4.4.0
      *
-     * @param string $title The document title. Default empty string.
      */
     $title = '';
-    if ( ! empty( $title ) ) {
+    if (!empty($title)) {
         return $title;
     }
 
@@ -198,94 +206,94 @@ function wp_get_document_title_fixed() {
     );
 
     // If it's a 404 page, use a "Page not found" title.
-    if ( is_404() ) {
-        $title['title'] = __( 'Page not found' );
+    if (is_404()) {
+        $title['title'] = __('Page not found');
 
         // If it's a search, use a dynamic search results title.
-    } elseif ( is_search() ) {
+    } elseif (is_search()) {
         /* translators: %s: search phrase */
-        $title['title'] = sprintf( __( 'Search Results for &#8220;%s&#8221;' ), get_search_query() );
+        $title['title'] = sprintf(__('Search Results for &#8220;%s&#8221;'), get_search_query());
 
         // If on the front page, use the site title.
-    } elseif ( is_front_page() ) {
-        $title['title'] = get_bloginfo( 'name', 'display' );
+    } elseif (is_front_page()) {
+        $title['title'] = get_bloginfo('name', 'display');
 
         // If on a post type archive, use the post type archive title.
-    } elseif ( is_post_type_archive() ) {
-        $title['title'] = post_type_archive_title( '', false );
+    } elseif (is_post_type_archive()) {
+        $title['title'] = post_type_archive_title('', false);
 
         // If on a taxonomy archive, use the term title.
-    } elseif ( is_tax() ) {
-        $title['title'] = single_term_title( '', false );
+    } elseif (is_tax()) {
+        $title['title'] = single_term_title('', false);
 
         /*
         * If we're on the blog page that is not the homepage or
         * a single post of any post type, use the post title.
         */
-    } elseif ( is_home() || is_singular() ) {
-        $title['title'] = single_post_title( '', false );
+    } elseif (is_home() || is_singular()) {
+        $title['title'] = single_post_title('', false);
 
         // If on a category or tag archive, use the term title.
-    } elseif ( is_category() || is_tag() ) {
-        $title['title'] = single_term_title( '', false );
+    } elseif (is_category() || is_tag()) {
+        $title['title'] = single_term_title('', false);
 
         // If on an author archive, use the author's display name.
-    } elseif ( is_author() && $author = get_queried_object() ) {
+    } elseif (is_author() && $author = get_queried_object()) {
         $title['title'] = $author->display_name;
 
         // If it's a date archive, use the date as the title.
-    } elseif ( is_year() ) {
-        $title['title'] = get_the_date( _x( 'Y', 'yearly archives date format' ) );
+    } elseif (is_year()) {
+        $title['title'] = get_the_date(_x('Y', 'yearly archives date format'));
 
-    } elseif ( is_month() ) {
-        $title['title'] = get_the_date( _x( 'F Y', 'monthly archives date format' ) );
+    } elseif (is_month()) {
+        $title['title'] = get_the_date(_x('F Y', 'monthly archives date format'));
 
-    } elseif ( is_day() ) {
+    } elseif (is_day()) {
         $title['title'] = get_the_date();
     }
 
     // Add a page number if necessary.
-    if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-        $title['page'] = sprintf( __( 'Page %s' ), max( $paged, $page ) );
+    if (($paged >= 2 || $page >= 2) && !is_404()) {
+        $title['page'] = sprintf(__('Page %s'), max($paged, $page));
     }
 
     // Append the description or site title to give context.
-    if ( is_front_page() ) {
-        $title['tagline'] = get_bloginfo( 'description', 'display' );
+    if (is_front_page()) {
+        $title['tagline'] = get_bloginfo('description', 'display');
     } else {
-        $title['site'] = get_bloginfo( 'name', 'display' );
+        $title['site'] = get_bloginfo('name', 'display');
     }
 
     /**
      * Filters the separator for the document title.
      *
+     * @param string $sep Document title separator. Default '-'.
      * @since 4.4.0
      *
-     * @param string $sep Document title separator. Default '-'.
      */
-    $sep = apply_filters( 'document_title_separator', '-' );
+    $sep = apply_filters('document_title_separator', '-');
 
     /**
      * Filters the parts of the document title.
      *
-     * @since 4.4.0
-     *
      * @param array $title {
      *     The document title parts.
      *
-     *     @type string $title   Title of the viewed page.
-     *     @type string $page    Optional. Page number if paginated.
-     *     @type string $tagline Optional. Site description when on home page.
-     *     @type string $site    Optional. Site title when not on home page.
+     * @type string $title Title of the viewed page.
+     * @type string $page Optional. Page number if paginated.
+     * @type string $tagline Optional. Site description when on home page.
+     * @type string $site Optional. Site title when not on home page.
      * }
+     * @since 4.4.0
+     *
      */
     //  $title = apply_filters( 'document_title_parts', $title );
 
-    $title = implode( " $sep ", array_filter( $title ) );
-    $title = wptexturize( $title );
-    $title = convert_chars( $title );
-    $title = esc_html( $title );
-    $title = capital_P_dangit( $title );
+    $title = implode(" $sep ", array_filter($title));
+    $title = wptexturize($title);
+    $title = convert_chars($title);
+    $title = esc_html($title);
+    $title = capital_P_dangit($title);
 
     return $title;
 }

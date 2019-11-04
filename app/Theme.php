@@ -22,7 +22,7 @@ class Theme extends ThemeBase
     protected function __construct()
     {
         $this->router = new ThemeRouter();
-
+        $this->shortCodes();
         parent::__construct();
         add_action('init', function () {
             //$this->registerTaxonomies();
@@ -85,7 +85,7 @@ class Theme extends ThemeBase
         }
     }
 
-    public function ads($size = '300x600'): string
+    public function ads(string $size = '300x600'): string
     {
         return get_field("ads_$size", 'option');
     }
@@ -143,6 +143,21 @@ class Theme extends ThemeBase
                 return $avatar;
             }
         };
+    }
+
+    private function shortCodes()
+    {
+        add_shortcode('gallery', function () {
+            if ($gallery = get_field('gallery')) {
+                $data = [
+                    'main' => array_shift($gallery),
+                    'thumbnails' => $gallery
+                ];
+                return $this->router->render('articles.includes.gallery', $data, false);
+            } else {
+                return 'Нет галереи';
+            }
+        });
     }
 
     private function registerPostTypes(): void

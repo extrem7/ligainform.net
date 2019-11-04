@@ -1,10 +1,13 @@
 <?php
 require_once get_template_directory() . "/vendor/autoload.php";
 require_once get_template_directory() . "/app/controllers/Controller.php";
+
 use Jenssegers\Blade\Blade;
+
 class ThemeRouter
 {
     private $blade;
+
     public function __construct()
     {
         $this->blade = new Blade(get_template_directory() . '/views', get_template_directory() . '/cache');
@@ -12,11 +15,18 @@ class ThemeRouter
         add_filter('theme_page_templates', [$this, 'pageTemplates']);
         add_filter('template_include', [$this, 'routes']);
     }
-    public function render(string $view, array $args = [])
+
+    public function render(string $view, array $args = [], bool $echo = true)
     {
         $blade = new Blade(__dir__ . '/src/views', __dir__ . '/cache');
-        echo $this->blade->make($view, $args);
+        $html = $this->blade->make($view, $args);
+        if ($echo) {
+            echo $html;
+        } else {
+            return $html;
+        }
     }
+
     private function directives(): void
     {
         $this->blade->directive('title', function () {
@@ -50,7 +60,8 @@ class ThemeRouter
             return "<?php if(is_user_logged_in()): ?>";
         });
     }
-    public function pageTemplates($post_templates): array
+
+    public function pageTemplates(array $post_templates): array
     {
         $pages = array_diff(scandir(get_template_directory() . '/views/pages/'), ['.', '..']);
         foreach ($pages as $page) {
@@ -62,7 +73,8 @@ class ThemeRouter
         }
         return $post_templates;
     }
-    public function routes($template)
+
+    public function routes(string $template)
     {
         global $post;
         $view = '';

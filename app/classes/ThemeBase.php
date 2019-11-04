@@ -47,6 +47,9 @@ class ThemeBase
             wp_register_script('bootstrap', path() . 'assets/node_modules/bootstrap/dist/js/bootstrap.min.js');
             wp_enqueue_script('bootstrap');
 
+            wp_register_script('fancybox', path() . 'assets/node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js');
+            wp_enqueue_script('fancybox');
+
             wp_register_script('main', path() . 'assets/js/main.js');
             wp_enqueue_script('main');
             wp_localize_script('main', 'SharedData',
