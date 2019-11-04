@@ -7,6 +7,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 @import url(../node_modules/@fortawesome/fontawesome-free/css/all.css);
+@import url(../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css);
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6662,10 +6663,13 @@ footer {
   background-color: #ffffff;
   font-family: 'Play', sans-serif;
   font-size: 15px;
-  color: #202020; }
+  color: #202020;
+  border-top: 3px solid #F69E1B; }
   .sidebar-articles .sidebar-article-item {
-    margin-top: 18px;
-    padding: 0 12px; }
+    margin: 14px 12px 0 12px; }
+    .sidebar-articles .sidebar-article-item + .sidebar-article-item {
+      padding-top: 14px;
+      border-top: 1px solid #A49F9F; }
   .sidebar-articles .sidebar-title {
     font-weight: 700;
     padding: 25px 0 0 0; }
@@ -6675,7 +6679,7 @@ footer {
     color: #202020;
     -webkit-line-clamp: 3;
     max-height: 66px;
-    margin-top: 7px; }
+    margin-bottom: 7px; }
   .sidebar-articles .all-news {
     display: block;
     color: #FCB30C;
@@ -7121,6 +7125,39 @@ footer {
     display: flex;
     align-items: center; }
 
+.gallery-single {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 550px;
+  width: 100%; }
+  .gallery-single .gallery-main-photo img {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    cursor: zoom-in;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px; }
+    .gallery-single .gallery-main-photo img:hover {
+      border-color: #FCB30C; }
+  .gallery-single .gallery-thumb {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px; }
+    .gallery-single .gallery-thumb .thumb-item {
+      margin: 5px; }
+      .gallery-single .gallery-thumb .thumb-item img {
+        cursor: zoom-in;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid #b7b7b7;
+        border-radius: 5px; }
+        .gallery-single .gallery-thumb .thumb-item img:hover {
+          border-color: #FCB30C; }
+
 @media (max-width: 991px) {
   .site-error-text {
     font-size: 14px; }
@@ -7163,6 +7200,11 @@ footer {
     margin-top: 15px; }
   .telegram-link {
     margin-bottom: 15px; }
+  .gallery-single .gallery-main-photo img {
+    height: auto; }
+  .gallery-single .gallery-thumb .thumb-item img {
+    width: 60px;
+    height: 60px; }
   .article-tags {
     flex-flow: row nowrap;
     white-space: nowrap;
