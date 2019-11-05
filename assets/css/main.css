@@ -6669,11 +6669,14 @@ footer {
     margin: 14px 12px 0 12px; }
     .sidebar-articles .sidebar-article-item + .sidebar-article-item {
       padding-top: 14px;
-      border-top: 1px solid #A49F9F; }
+      border-top: 1px solid rgba(0, 0, 0, 0.14); }
+    .sidebar-articles .sidebar-article-item .text-center {
+      text-align: left !important; }
   .sidebar-articles .sidebar-title {
     font-weight: 700;
-    padding: 25px 0 0 0; }
+    padding: 18px 0 0 0; }
   .sidebar-articles .article-time {
+    font-size: 14px;
     color: #FCB30C; }
   .sidebar-articles .article-title {
     color: #202020;

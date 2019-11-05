@@ -1,4 +1,4 @@
-@php $last = new WP_Query(['posts_per_page' => 7]) @endphp
+@php $last = new WP_Query(['posts_per_page' => 8]) @endphp
 <div class="sidebar-articles">
     <div class="sidebar-title text-center text-uppercase">Лента новостей</div>
     @while ($last->have_posts())

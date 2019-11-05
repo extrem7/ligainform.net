@@ -85,25 +85,25 @@
       background-color: #f17f2e;
     }
     &:nth-child(2) {
-      background-color: #ed1c24;
+      background-color: $ukraine-color;
     }
     &:nth-child(3) {
       background-color: #3059f9;
     }
     &:nth-child(4) {
-      background-color: #242a36;
+      background-color: $business-color;
     }
     &:nth-child(5) {
       background-color: #0072ff;
     }
     &:nth-child(6) {
-      background-color: #f7931e;
+      background-color: $sport-color;
     }
     &:nth-child(7) {
       background-color: #ff0077;
     }
     &:nth-child(8) {
-      background-color: #22b573;
+      background-color: $health-color;
     }
   }
 }

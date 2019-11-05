@@ -152,7 +152,7 @@ input[type=submit] {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   select,
   textarea,
-  input {
+  input:not(.dem-button ) {
     font-size: 1rem!important;
   }
 }

@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   font-size: 13px;
+  line-height: 1;
 }
 
 .article-item {
@@ -83,11 +84,11 @@
   }
 
   .article-title {
-    font-size: 20px;
+    font-size: 23px;
     color: #fff;
     -webkit-line-clamp: 3;
-    max-height: 72px;
-    margin-top: 50px;
+    max-height: 81px;
+    margin-top: 45px;
   }
 
   .decor-line {
@@ -99,9 +100,9 @@
 
   .article-description {
     color: #dedede;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 22px;
-    max-height: 76px;
+    max-height: 84px;
     -webkit-line-clamp: 4;
     font-weight: 300;
   }
@@ -113,7 +114,7 @@
 
   .archive-box {
     background-color: #464646;
-    height: 450px;
+    height: 425px;
   }
 
   .archive-name {
@@ -154,7 +155,7 @@
   .article-img {
     position: relative;
     display: block;
-    height: 450px;
+    height: 425px;
     overflow: hidden;
     &:after {
       content: '';
@@ -186,31 +187,39 @@
   font-family: 'Play', sans-serif;
   font-size: 15px;
   color: #202020;
+  border-top: 3px solid #F69E1B;
   .sidebar-article-item {
-    margin-top: 18px;
-    padding: 0 12px;
+    margin: 14px 12px 0 12px;
+    & + .sidebar-article-item {
+      padding-top: 14px;
+      border-top: 1px solid rgba(0,0,0,.14);
+    }
+    .text-center {
+      text-align: left!important;
+    }
   }
   .sidebar-title {
     font-weight: 700;
-    padding: 25px 0 0 0;
+    padding: 18px 0 0 0;
   }
   .article-time {
+    font-size: 14px;
     color: $yellow;
   }
   .article-title {
     color: #202020;
     -webkit-line-clamp: 3;
     max-height: 66px;
-    margin-top: 7px;
+    margin-bottom: 7px;
     &:hover {
-      text-decoration: underline;
+      //text-decoration: underline;
     }
   }
   .all-news {
     display: block;
     color: $yellow;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     margin-top: 10px;
     padding: 13px 0;
@@ -369,6 +378,9 @@
     border-bottom-color: $ukraine-color;
   }
   &.cat-ukraine {
+    &:hover {
+      color: $ukraine-color;
+    }
     &:after {
       background-image: url($ukraine-icon);
     }
@@ -378,6 +390,9 @@
     border-bottom-color: $world-color;
   }
   &.cat-world {
+    &:hover {
+      color: $world-color;
+    }
     &:after {
       background-image: url($world-icon);
     }
@@ -387,15 +402,21 @@
     border-bottom-color: $business-color;
   }
   &.cat-business {
+    &:hover {
+      color: $business-color;
+    }
     &:after {
       background-image: url($business-icon);
     }
   }
 
-  &.cat-science, &.cat-science:before {
+  &.cat-science_and_technology, &.cat-science_and_technology:before {
     border-bottom-color: $science-color;
   }
-  &.cat-science {
+  &.cat-science_and_technology {
+    &:hover {
+      color: $science-color;
+    }
     &:after {
       background-image: url($science-icon);
     }
@@ -405,6 +426,9 @@
     border-bottom-color: $health-color;
   }
   &.cat-health {
+    &:hover {
+      color: $health-color;
+    }
     &:after {
       background-image: url($health-icon);
     }
@@ -414,6 +438,9 @@
     border-bottom-color: $culture-color;
   }
   &.cat-culture {
+    &:hover {
+      color: $culture-color;
+    }
     &:after {
       background-image: url($culture-icon);
     }
@@ -423,6 +450,9 @@
     border-bottom-color: $sport-color;
   }
   &.cat-sport {
+    &:hover {
+      color: $sport-color;
+    }
     &:after {
       background-image: url($sport-icon);
     }
@@ -432,7 +462,13 @@
     border-bottom-color: #f17f2e;
   }
   &.cat-news {
+    &:hover {
+      color: $sport-color;
+    }
     &:after {
+      &:hover {
+        color: $sport-color;
+      }
       //background-image: url($sport-icon);
     }
   }
@@ -450,6 +486,7 @@
 @media (max-width: 1199px) {
   .archive-main-article {
     .article-title {
+      max-height: 72px;
       font-size: 16px;
     }
   }
@@ -478,7 +515,7 @@
     }
     .article-description {
       text-align: center;
-      max-height: 95px;
+      max-height: 105px;
       -webkit-line-clamp: 5;
     }
     .archive-box {
@@ -508,7 +545,7 @@
     flex-direction: column;
     .article-title {
       margin-top: 15px;
-      font-size: 16px;
+      font-size: 17px;
       -webkit-line-clamp: 3;
       max-height: 57px;
     }
@@ -520,7 +557,7 @@
     }
     .article-date,
     .article-description {
-      font-size: 11px;
+      font-size: 12px;
     }
     .article-img {
       width: 100%;
@@ -556,6 +593,10 @@
 
   .title-category {
     font-size: 16px;
+  }
+
+  .article-date {
+
   }
 
 }
