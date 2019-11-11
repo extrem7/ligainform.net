@@ -69,6 +69,11 @@ function getCookie(name) {
 
     $(window).on('load resize scroll', () => header());
 
+    if (Notification.permission === 'granted')
+        localStorage.setItem('onesignal-notification-prompt',
+            JSON.stringify({value: "dismissed", timestamp: 1576054897083})
+        );
+
     $(window).on('load', () => {
         setTimeout(() => {
             $('.preloader .box').fadeOut(1000);
