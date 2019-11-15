@@ -129,6 +129,14 @@ class ThemeBase
                 'icon_url' => 'dashicons-hammer',
             ]);
         }
+
+        $path = get_template_directory() . '/assets/acf-json';
+        add_filter('acf/settings/save_json', function () use ($path) {
+            return $path;
+        });
+        add_filter('acf/settings/load_json', function () use ($path) {
+            return [$path];
+        });
     }
 
     private function GPSI()
