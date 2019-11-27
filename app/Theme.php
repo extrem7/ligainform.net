@@ -182,6 +182,16 @@ class Theme extends ThemeBase
                 'public' => true,
                 'menu_position' => 5,
                 'menu_icon' => 'dashicons-businessman',
+                'capabilities' => [
+                    'edit_post' => 'update_core',
+                    'read_post' => 'update_core',
+                    'delete_post' => 'update_core',
+                    'edit_posts' => 'update_core',
+                    'edit_others_posts' => 'update_core',
+                    'delete_posts' => 'update_core',
+                    'publish_posts' => 'update_core',
+                    'read_private_posts' => 'update_core'
+                ],
                 'supports' => ['title', 'custom-fields', 'thumbnail'],
                 'has_archive' => false,
                 'rewrite' => ['slug' => 'members-sotrudnyki']]);

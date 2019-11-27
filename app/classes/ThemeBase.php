@@ -123,7 +123,7 @@ class ThemeBase
                 'page_title' => 'Настройки',
                 'menu_title' => 'Настройки',
                 'menu_slug' => 'theme-general-settings',
-                'capability' => 'edit_posts',
+                'capability' => 'edit_theme_options',
                 'redirect' => false,
                 'position' => 2,
                 'icon_url' => 'dashicons-hammer',
