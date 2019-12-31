@@ -197,6 +197,9 @@
     .text-center {
       text-align: left!important;
     }
+    &:first-child {
+      margin-top: 58px;
+    }
   }
   .sidebar-title {
     font-weight: 700;
@@ -211,18 +214,16 @@
     -webkit-line-clamp: 3;
     max-height: 66px;
     margin-bottom: 7px;
-    &:hover {
-      //text-decoration: underline;
-    }
   }
   .all-news {
     display: block;
-    color: $yellow;
+    color: #383438;
     text-align: center;
     font-size: 14px;
     text-transform: uppercase;
     margin-top: 10px;
     padding: 13px 0;
+    font-weight: bold;
     border-top: 1px solid #c8c8c8;
     &:hover {
       background-color: $yellow;
