@@ -1,0 +1,122 @@
+footer {
+  font-family: 'Play', sans-serif;
+  font-size: 13px;
+  color: #ececec;
+  font-weight: 400;
+
+  .footer-top {
+    padding: 60px 0;
+    background-color: #333333;
+    border-top: 7px solid #ffa360;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    background-color: #292929;
+    padding: 10px 0;
+    min-height: 60px;
+    color: #dfdfdf;
+    display: flex;
+    align-items: center;
+  }
+
+  .media-title {
+    font-size: 15px;
+    color: #ececec;
+    position: relative;
+    text-align: center;
+    span {
+      display: inline-block;
+      position: relative;
+      z-index: 30;
+      padding: 0 15px;
+      background-color: #333333;
+    }
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 1px;
+      background: #fff;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    &:after {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  .footer-follow {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    .follow-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      margin-bottom: 10px;
+      background-color: #3e3e3e;
+      transition: background-color .2s ease-in-out;
+      img {
+        height: 15px;
+      }
+      &:last-child {
+        img {
+          height: 13px;
+        }
+      }
+      &:hover {
+        background-color: $orange;
+      }
+      & + .follow-item {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .footer-menu {
+    padding: 0;
+    li {
+      display: block;
+      &+ li {
+        margin-top: 15px;
+      }
+      a {
+        font-size: 15px;
+        color: #ececec;
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  footer {
+    .media-title,
+    .footer-menu {
+      li {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+    .footer-top {
+      padding: 40px 0 30px 0;
+    }
+    .footer-description {
+      margin: 30px 0;
+    }
+  }
+}

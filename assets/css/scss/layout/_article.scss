@@ -201,9 +201,6 @@
   .sidebar-title {
     font-weight: 700;
     padding: 18px 0 0 0;
-    & + .sidebar-article-item {
-      margin-top: 29px;
-    }
   }
   .article-time {
     font-size: 14px;
@@ -214,16 +211,18 @@
     -webkit-line-clamp: 3;
     max-height: 66px;
     margin-bottom: 7px;
+    &:hover {
+      //text-decoration: underline;
+    }
   }
   .all-news {
     display: block;
-    color: #383438;
+    color: $yellow;
     text-align: center;
     font-size: 14px;
     text-transform: uppercase;
     margin-top: 10px;
     padding: 13px 0;
-    font-weight: bold;
     border-top: 1px solid #c8c8c8;
     &:hover {
       background-color: $yellow;
