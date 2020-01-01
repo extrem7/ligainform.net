@@ -56,7 +56,7 @@ class Theme extends ThemeBase
         }
     }
 
-    public function exchange(): void
+    public function exchange(): array
     {
         if ($string = file_get_contents('http://bank-ua.com/export/currrate.xml')) {
             $xml = new SimpleXMLElement($string);
@@ -83,6 +83,7 @@ class Theme extends ThemeBase
             };
             foreach ($rates as $ccy => $rate) update_option($ccy, $rate);
         }
+        return $rates;
     }
 
     public function ads(string $size = '300x600'): string
