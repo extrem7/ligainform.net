@@ -6935,7 +6935,12 @@ footer {
     .single-header .single-image img {
       object-fit: cover;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      padding-bottom: 10px; }
+    .single-header .single-image .caption-image {
+      font-family: 'Play', sans-serif;
+      color: #807F7F;
+      font-size: 13px; }
 
 .single-body {
   font-size: 18px;
