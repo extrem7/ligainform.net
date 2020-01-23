@@ -21,7 +21,7 @@
                             {{the_post_thumbnail('full', ['alt' => get_the_title()])}}
                             @if (get_the_post_thumbnail_caption())
                                 <div class="caption-image">&#169 {{the_post_thumbnail_caption()}}</div>
-                            @endif;
+                            @endif
                         </div>
                     @endif
                 </div>
