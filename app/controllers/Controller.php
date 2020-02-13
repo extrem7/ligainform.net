@@ -10,7 +10,7 @@ class Controller
             'meta_value' => true
         ]);
         $rows = get_categories([
-            'exclude' => [1, 29, 70]
+            'exclude' => [1, 29, 70, 2413]
         ]);
         $columns = get_categories([
             'include' => [29, 70]
