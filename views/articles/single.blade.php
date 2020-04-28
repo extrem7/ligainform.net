@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="single-date">
                             <img src="{{asset('img/icons/clocknews.svg')}}" class="mr-2"
-                                 alt="clock">{{get_the_date('d F Y | H:m')}}
+                                 alt="clock">{{get_the_date('d F Y | H:i')}}
                         </div>
                         <div class="single-views">
                             <img src="{{asset('img/icons/eye.svg')}}" alt="views"
