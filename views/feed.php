@@ -85,7 +85,7 @@ do_action( 'rss_tag_pre', 'rss2' );
         do_action( 'rss2_head');
 
         while( have_posts()) : the_post();
-            ?>
+         ?>
             <item>
                 <title><?php the_title_rss() ?></title>
                 <link><?php the_permalink_rss() ?></link>
@@ -114,9 +114,9 @@ do_action( 'rss_tag_pre', 'rss2' );
                         <content:encoded><![CDATA[<?php the_excerpt_rss(); ?>]]></content:encoded>
                     <?php endif; ?>
                 <?php endif; ?>
-                <?php $cat = get_the_category_rss('rss2'); if ($cat == "Эксклюзив"): ?>
-                    <yandex:full-text><?php echo str_replace("&nbsp;","",get_the_content_feed('rss2')); ?></yandex:full-text>
-                <? endif; ?>
+				<?php $cat = get_the_category_rss('rss2'); if ($cat == "Эксклюзив"): ?>
+	            <yandex:full-text><?php $str = str_replace("&nbsp;","",get_the_content_feed('rss2')); echo strip_tags($str); ?></yandex:full-text>
+				<? endif; ?>
                 <?php if ( get_comments_number() || comments_open() ) : ?>
                     <wfw:commentRss><?php echo esc_url( get_post_comments_feed_link(null, 'rss2') ); ?></wfw:commentRss>
                     <slash:comments><?php echo get_comments_number(); ?></slash:comments>

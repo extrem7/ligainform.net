@@ -19,10 +19,10 @@
                     @if (has_post_thumbnail())
                         <div class="single-image">
                             {{the_post_thumbnail('full', ['alt' => get_the_title()])}}
-                            @if (get_the_post_thumbnail_caption())
+                             @if (get_the_post_thumbnail_caption())
                                 <div class="caption-image">&#169; {{the_post_thumbnail_caption()}}</div>
                             @endif
-                        </div>
+						</div>
                     @endif
                 </div>
                 <div class="single-body dynamic-content">@content</div>
