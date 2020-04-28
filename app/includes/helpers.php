@@ -271,7 +271,7 @@ function wp_get_document_title_fixed()
      * @since 4.4.0
      *
      */
-    $sep = apply_filters('document_title_separator', '-');
+    $sep = apply_filters('document_title_separator', '—');
 
     /**
      * Filters the parts of the document title.
