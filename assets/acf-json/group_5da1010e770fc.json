@@ -22,8 +22,8 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5dc0709865b01",
-            "label": "Использовать галерею",
+            "key": "field_5dc07ad9a6189",
+            "label": "Использовать галерею [gallery]",
             "name": "use_gallery",
             "type": "true_false",
             "instructions": "",
@@ -41,16 +41,16 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5dc0707d65b00",
+            "key": "field_5dc07ae4a618a",
             "label": "Галерея",
             "name": "gallery",
             "type": "gallery",
-            "instructions": "Используйте шорткод [gallery]",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5dc0709865b01",
+                        "field": "field_5dc07ad9a6189",
                         "operator": "==",
                         "value": "1"
                     }
@@ -91,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574885677
+    "modified": 1575036373
 }
